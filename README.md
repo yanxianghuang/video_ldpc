@@ -21,7 +21,7 @@ User can choose input video_file, as well as the SNR to simulate. A sample resul
 
 ## system requirements
 * 64-bit operating system of ethier Windows, Unix, or MAC OSX
-* 64-bit Matlab, with licnese of:
+* 64-bit Matlab, with licences of:
   * basic Matlab license
   * communication_toolbox
   * signal_toolbox
