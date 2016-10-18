@@ -4,7 +4,7 @@ For many days, I was wandering the physical meaning of BER (bit-error rate) and 
 Therefore I built this task (in Matlab and C) to monitor the physical meaning of SNR, BER, ECC (LDPC), illustrated in the context of (Image) video transmission.
 
 
-# system discription
+# System discription
 The Matlab GUI simulates video transmission via a gaussian noise (AWG) channel. The modulation sheme is QPSK. For error correction, a LDPC decoder is utilized.
 
 To speedup the simulation, the model uses a custumized LDPC encoder/decoder, rather than the built in one form communication_toolbox. This brings ~100 speedup. The LDPC encoder/decoder is compatible to IEEE 802.11ad starndrd, by default it is in 1/2 coding rate, you can hack it to use 5/8, 3/4, or 13/16 coding rate. The block size of the code is fixed to be 672 bits. It takes logrithmetic input from the mapper. The LDPC decoder is implemented in fixed-point to represent industrial chip behavior. The bitwidth is between 4-10. Currently we only provide mex code to be used in Matlab. The original c code, as well as the exact bitwidth, are still confidential. We hope to open-source to the public soon.
