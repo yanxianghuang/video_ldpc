@@ -13,23 +13,26 @@ User can choose input video_file, as well as the SNR to simulate. A sample resul
 ![Example simulation result](/result/ldpcsnr3.jpg)
 
 
+
+
+
+
 # User's guide
 
 ## system requirements
 * 64-bit operating system of ethier Windows, Unix, or MAC OSX
 * 64-bit Matlab, with licnese of:
-..* basic Matlab license
-..* communication_toolbox
-..* signal_toolbox
+  * basic Matlab license
+  * communication_toolbox
+  * signal_toolbox
 
 ## Usage guide
-1. Download this git page
+### Download this git page
 Otherwise, you can simply fork this page by:
 ```bash
 git clone https://github.com/yanxianghuang/video_ldpc
 ```
-
-2. Run the script from Matlab:
+### Run the script from Matlab:
 Open Matlab, entering the src folder, start the program by typing
 ```Matlab
 show_pic_ber
@@ -37,22 +40,29 @@ show_pic_ber
 in your Matlab commandline. A figure template should appear.
 
 Adjust the parameters in the right-top corner __Panel__:
-1. select file for testcase, you can choose the one in '../testcase/sample.avi';
-2. choose the SNR value in dB for simulation, preferably chose 3;
-3. for 'start from' item item, you may choose 0, meaning we start from the first frame (the 0 second).
-4. tick the Updating new frames, if you want the simulation process to update new frames automatically (streaming).
-5. click Simulate, you are ready to see the effect, of the original frame(s), corrupted by the signal frame(s), and the decoded form error correction code frame(s).
-6.  To stop, untick the 'updating new frame', it will stop when finishs current frame. To start a new simulation, click Simulate button.
+* select file for testcase, you can choose the one in '../testcase/sample.avi';
+* choose the SNR value in dB for simulation, preferably chose 3;
+* for 'start from' item item, you may choose 0, meaning we start from the first frame (the 0 second).
+* tick the Updating new frames, if you want the simulation process to update new frames automatically (streaming).
+* click Simulate, you are ready to see the effect, of the original frame(s), corrupted by the signal frame(s), and the decoded form error correction code frame(s).
+*  To stop, untick the 'updating new frame', it will stop when finishs current frame. To start a new simulation, click Simulate button.
 
 Be patient as the simulation may take long. This is mainly due to the time-consuming demapper function from communication_toolbox. I hope one day I'll find the time to convert it to Python, or reuse my own demapping, for speed-up.
 Enjoy, and if you have and suggestions, please shot.
 
 
 
+
+
+
+
+
 # hacker's guide
+
 You can modify the program as you like. For instance, you can change the modulation scheme, channel noise model, LDPC schemes (or even substitute it with one you have).
 
 ## File structure
+
 src
 -- show_pic_ber.m (the main function)
 -- show_pic_ber.fig (the GUI interface, it will be open once show_pic_ber.m is used)
