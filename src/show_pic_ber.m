@@ -222,7 +222,7 @@ while hasFrame(avi_obj)
     % processing a picture frame
     for block = 1:pic_size,
           %fprintf('%d ',block);
-          encodedData    = encoder(1, bit_pic(block*k-k+1:block*k));
+          encodedData    = encoder(1, bit_pic(block*k-k+1:block*k)); % custumized LDPC encoder for 802.11, option 1 is the mode (1,2,3,4) means (1/2, 5/8, 3/4, 13/16) coding rate
           modSignal      = step(hMod, encodedData);
           receivedSignal = step(hChan, modSignal);
           demodSignal    = step(hDemod, receivedSignal);
